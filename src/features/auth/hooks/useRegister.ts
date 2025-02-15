@@ -24,7 +24,7 @@ export const useRegister = () => {
     onSuccess: (_: AxiosResponse<IRegisterRes>) => {
       form.reset({ email: '', password: '', username: '' });
       toast('Registred Successfully.');
-      setTimeout(() => redirect('/login'), 2000);
+      setTimeout(() => redirect('/login'), 500);
     },
     onError: (err: AxiosError<IRegisterRes>) => {
       toast(`${err.response?.data.message} !!!`);
