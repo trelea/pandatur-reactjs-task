@@ -8,8 +8,29 @@ export interface Ticket {
 }
 
 export interface ITicketsStore {
-  ticktes: Ticket[] | [];
+  tickets: Ticket[] | [];
 
-  create_ticket: () => void;
+  create_ticket: ({
+    ticket,
+  }: {
+    ticket: Omit<Ticket, 'id' | 'priority' | 'workflow'>;
+  }) => void;
+
+  update_ticket: ({
+    id,
+    ticket,
+  }: {
+    id: number;
+    ticket: Partial<Omit<Ticket, 'id' | 'priority' | 'workflow'>>;
+  }) => void;
+
   remove_ticket: ({ id }: { id: number }) => void;
+
+  set_workflow: ({
+    ticket,
+    workflow,
+  }: {
+    ticket: number;
+    workflow: number;
+  }) => void;
 }
