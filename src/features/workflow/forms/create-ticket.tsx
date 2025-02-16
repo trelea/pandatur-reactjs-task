@@ -7,10 +7,13 @@ import { useCreateTicket } from '../hooks/useCreateTicket';
 
 export default function CreateTicketForm({
   className,
+  cb,
   // @ts-ignore
   ...props
-}: React.HTMLAttributes<HTMLFormElement>): React.ReactNode {
-  const { form, onSubmit } = useCreateTicket();
+}: React.HTMLAttributes<HTMLFormElement> & {
+  cb?: () => void;
+}): React.ReactNode {
+  const { form, onSubmit } = useCreateTicket({ cb });
   return (
     <Form {...form}>
       <form

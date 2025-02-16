@@ -1,4 +1,5 @@
 import Layout from '@/components/main-layout';
+import { cn } from '@/lib/utils';
 import React from 'react';
 
 export interface WorkflowContextProps {
@@ -16,8 +17,10 @@ export const WorkflowContext = React.createContext<WorkflowContextProps>(
 
 export default function WorkflowLayout({
   children,
+  className,
 }: {
   children: React.ReactNode;
+  className?: React.HTMLAttributes<HTMLElement>['className'];
 }): React.ReactNode {
   const [openCreateDialog, setOpenCreateDialog] =
     React.useState<boolean>(false);
@@ -33,7 +36,9 @@ export default function WorkflowLayout({
         setOpenUpdateDialog,
       }}
     >
-      <Layout>{children}</Layout>
+      <Layout>
+        <div className={cn('', className)}>{children}</div>
+      </Layout>
     </WorkflowContext.Provider>
   );
 }

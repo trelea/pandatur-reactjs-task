@@ -25,7 +25,7 @@ export default function SearchBar({
       <Input
         defaultValue={search}
         onChange={(e) => setSearch(e.target.value)}
-        className='border-none outline-none ring-0 shadow-none drop-shadow-none focus-visible:ring-0 h-fit w-96'
+        className='border-none outline-none ring-0 shadow-none drop-shadow-none focus-visible:ring-0 h-fit w-80'
         placeholder='Search tickets'
       />
     </div>

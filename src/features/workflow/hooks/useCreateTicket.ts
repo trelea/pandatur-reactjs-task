@@ -15,7 +15,7 @@ const formModel = z.object({
   notes: z.string(),
 });
 
-export const useCreateTicket = () => {
+export const useCreateTicket = ({ cb }: { cb?: () => void }) => {
   const { setOpenCreateDialog } =
     useContext<WorkflowContextProps>(WorkflowContext);
 
@@ -35,6 +35,7 @@ export const useCreateTicket = () => {
       create_ticket({ ticket: val });
       setOpenCreateDialog(false);
       toast('Ticket Created Successfully.');
+      cb && cb();
     } catch (err: unknown) {
       return toast('Error Creating Ticket');
     }

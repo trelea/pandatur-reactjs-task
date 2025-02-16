@@ -13,5 +13,7 @@ export const useQueryParams = () => {
       Filters[0],
     ]),
   });
-  return { queries, setQueries };
+  const clear = () => setQueries({ search: '', filters: ['TITLE'] });
+
+  return { queries, setQueries, clear };
 };

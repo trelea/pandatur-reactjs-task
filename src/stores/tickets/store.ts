@@ -60,6 +60,20 @@ export const useTicketsStore = create<ITicketsStore>()(
             return t;
           }),
         }),
+
+      set_priority: ({
+        ticket,
+        priority,
+      }: {
+        ticket: number;
+        priority: number;
+      }) =>
+        set({
+          tickets: get().tickets.map((t) => {
+            if (t.id === ticket) return { ...t, priority };
+            return t;
+          }),
+        }),
     }),
     { name: 'kanban' }
   )

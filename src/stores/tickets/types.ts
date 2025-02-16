@@ -33,4 +33,12 @@ export interface ITicketsStore {
     ticket: number;
     workflow: number;
   }) => void;
+
+  set_priority: ({
+    ticket,
+    priority,
+  }: {
+    ticket: number;
+    priority: number;
+  }) => void;
 }

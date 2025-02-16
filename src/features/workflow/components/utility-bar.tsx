@@ -43,7 +43,7 @@ export default function UtilityBar({
   const { openCreateDialog, setOpenCreateDialog } =
     useContext<WorkflowContextProps>(WorkflowContext);
   return (
-    <nav className='flex justify-center items-center w-full p-4 px-6 border-b shadow-sm'>
+    <nav className='flex justify-center items-center w-full p-4 px-6 border-b shadow-sm fixed z-50 bg-white'>
       <div className='flex justify-between w-full'>
         <Dialog open={openCreateDialog} onOpenChange={setOpenCreateDialog}>
           <DialogTrigger asChild>

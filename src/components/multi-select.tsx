@@ -61,7 +61,7 @@ export default function MultiSelect({
   return (
     <Command
       onKeyDown={handleKeyDown}
-      className='overflow-visible bg-transparen border rounded-[5px] px-2 w-96'
+      className='overflow-visible bg-transparen border rounded-[5px] px-2 w-80'
     >
       <div className='flex items-center h-full'>
         <div className='flex gap-1 items-center'>
